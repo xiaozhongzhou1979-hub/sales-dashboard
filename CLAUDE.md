@@ -25,14 +25,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### Directory Structure
 ```
 src/
-  app/              # Next.js App Router pages and layouts
-    globals.css     # Global styles with CSS variables
-    layout.tsx      # Root layout with Geist fonts
-    page.tsx        # Home page
-  components/       # React components
-    ui/            # shadcn/ui components (card, table, tabs, badge, button)
-  lib/             # Utility functions
-    utils.ts       # shadcn/ui helper functions (cn)
+  app/              - 根布局、首页、全局样式
+  components/       - 业务组件（GlobalFilters、KPI系列、OrdersTable、图表）
+  components/ui/    - shadcn 基础组件
+  lib/              - utils.ts、product-config.ts、mock-data.ts、mock-generator.ts
+  types/            - index.ts 类型定义
+
+docs/
+  plan.md、plan-m8-breakdown.md、acceptance-m8.md、DEPLOY-NETLIFY.md
+  design/           - sales-dashboard-ui.pen
 ```
 
 ### Path Aliases

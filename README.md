@@ -34,10 +34,14 @@ npm run start
 
 ## 部署
 
-- **Netlify（推荐）**：见 [DEPLOY-NETLIFY.md](DEPLOY-NETLIFY.md)，支持 Git 关联一键部署。
+- **Netlify（推荐）**：见 [DEPLOY-NETLIFY.md](docs/DEPLOY-NETLIFY.md)，支持 Git 关联一键部署。
 - **Vercel**：连接仓库后使用默认 Next.js 配置即可。
 
 ## 更多说明
 
 - 产品规格与设计规范见 [CLAUDE.md](CLAUDE.md)。
 - 里程碑与任务拆解见 `docs/` 目录下的计划与验收文档。
+
+## 文档
+
+部署说明、迭代计划与验收标准见 `docs/` 目录。
