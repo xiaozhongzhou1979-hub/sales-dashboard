@@ -36,6 +36,7 @@ npm run start
 
 - **Netlify（推荐）**：见 [DEPLOY-NETLIFY.md](docs/DEPLOY-NETLIFY.md)，支持 Git 关联一键部署。
 - **Vercel**：连接仓库后使用默认 Next.js 配置即可。
+- 演示地址：https://dulcet-cactus-2faa8c.netlify.app/
 
 ## 更多说明
 
