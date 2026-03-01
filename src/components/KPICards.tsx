@@ -70,46 +70,46 @@ export default function KPICards({ filters }: KPICardsProps) {
   }, [filters.timeRange, filters.productCategory]);
 
   return (
-    <>
-      <div className="grid grid-cols-5 gap-4 mb-8">
-        {/* 总销售额 */}
-        <KPICard
-          title="总销售额"
-          value={formatValue('totalSales', kpis.totalSales.value)}
-          badgeLabel={badgeLabel}
-          change={kpis.totalSales.change}
-          trend={kpis.totalSales.trend}
-        />
+    <div className="grid grid-cols-2 gap-2 md:gap-4 xl:grid-cols-5">
+      {/* 总销售额 */}
+      <KPICard
+        title="总销售额"
+        value={formatValue('totalSales', kpis.totalSales.value)}
+        badgeLabel={badgeLabel}
+        change={kpis.totalSales.change}
+        trend={kpis.totalSales.trend}
+      />
 
-        {/* 今日订单数：环比为较昨日变化（单数） */}
-        <KPICard
-          title="今日订单数"
-          value={formatValue('todayOrders', kpis.todayOrders.value)}
-          badgeLabel={badgeLabel}
-          change={kpis.todayOrders.change}
-          trend={kpis.todayOrders.trend}
-          changeUnit="count"
-        />
+      {/* 今日订单数：环比为较昨日变化（单数） */}
+      <KPICard
+        title="今日订单数"
+        value={formatValue('todayOrders', kpis.todayOrders.value)}
+        badgeLabel={badgeLabel}
+        change={kpis.todayOrders.change}
+        trend={kpis.todayOrders.trend}
+        changeUnit="count"
+      />
 
-        {/* 客单价 */}
-        <KPICard
-          title="客单价"
-          value={formatValue('avgOrderValue', kpis.avgOrderValue.value)}
-          badgeLabel={badgeLabel}
-          change={kpis.avgOrderValue.change}
-          trend={kpis.avgOrderValue.trend}
-        />
+      {/* 客单价 */}
+      <KPICard
+        title="客单价"
+        value={formatValue('avgOrderValue', kpis.avgOrderValue.value)}
+        badgeLabel={badgeLabel}
+        change={kpis.avgOrderValue.change}
+        trend={kpis.avgOrderValue.trend}
+      />
 
-        {/* 环比增长率 */}
-        <KPICard
-          title="环比增长率"
-          value={formatValue('growthRate', kpis.growthRate.value)}
-          badgeLabel={badgeLabel}
-          change={kpis.growthRate.change}
-          trend={kpis.growthRate.trend}
-        />
+      {/* 环比增长率 */}
+      <KPICard
+        title="环比增长率"
+        value={formatValue('growthRate', kpis.growthRate.value)}
+        badgeLabel={badgeLabel}
+        change={kpis.growthRate.change}
+        trend={kpis.growthRate.trend}
+      />
 
-        {/* 达成率：距目标差距为百分比 */}
+      {/* 达成率：第5张卡片在手机/平板占满宽 col-span-2 */}
+      <div className="col-span-2 xl:col-span-1">
         <KPICard
           title="达成率"
           value={formatValue('achievementRate', kpis.achievementRate.value)}
@@ -119,6 +119,6 @@ export default function KPICards({ filters }: KPICardsProps) {
           progressGapLabel={`距目标还差 ${kpis.achievementRate.gap}%`}
         />
       </div>
-    </>
+    </div>
   );
 }

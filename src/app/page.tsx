@@ -30,9 +30,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-8">
         {/* 页面头部 */}
-        <div className="mb-6">
+        <div className="mb-2 md:mb-6">
           <div className="text-left">
             <h1 className="text-4xl font-bold text-foreground mb-2" style={{ fontFamily: 'var(--font-poppins)' }}>
               骨科销售仪表盘
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
 
         {/* 全局筛选器 */}
-        <div className="mb-8">
+        <div className="mb-2 md:mb-4">
           <GlobalFilters filters={filters} onFilterChange={handleFilterChange} />
         </div>
 
@@ -60,22 +60,18 @@ export default function Home() {
             </div>
           )}
           {/* KPI 卡片区域 */}
-          <div className="mb-8">
+          <div className="mb-2 md:mb-4">
             <KPICards filters={filters} />
           </div>
 
-          {/* 销售趋势图 */}
-          <div className="mb-8">
+          {/* 销售趋势图 + 产品分类饼图：手机垂直堆叠，平板/桌面并排 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 mb-2 md:mb-4">
             <SalesTrendChart filters={filters} />
-          </div>
-
-          {/* 产品分类饼图 */}
-          <div className="mb-8">
             <ProductPieChart filters={filters} />
           </div>
 
-          {/* 订单明细表格 */}
-          <div className="mb-8">
+          {/* 订单明细：手机/平板卡片列表，桌面表格 */}
+          <div className="mb-2 md:mb-4">
             <OrdersTable filters={filters} />
           </div>
         </div>
