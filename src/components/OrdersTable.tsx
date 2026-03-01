@@ -173,7 +173,41 @@ export default function OrdersTable({ filters }: OrdersTableProps) {
 
       {/* 手机/平板 <1280px：卡片列表 */}
       <div className="xl:hidden space-y-2 md:space-y-4">
-        <div className="flex flex-wrap items-center gap-2 md:gap-4">
+        {/* 手机 <768px：状态下拉 + 搜索 */}
+        <div className="md:hidden flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <label htmlFor="orders-status-mobile" className="text-sm text-muted-foreground shrink-0">
+              状态
+            </label>
+            <select
+              id="orders-status-mobile"
+              value={statusFilter}
+              onChange={(e) => setStatusFilter((e.target.value || 'all') as OrderStatus | 'all')}
+              className="flex-1 min-w-0 rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground"
+            >
+              {STATUS_FILTER_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="flex items-center gap-2">
+            <label htmlFor="orders-search-mobile" className="text-sm text-muted-foreground shrink-0">
+              搜索
+            </label>
+            <input
+              id="orders-search-mobile"
+              type="text"
+              placeholder="医院名称或订单号"
+              value={searchKeyword}
+              onChange={(e) => setSearchKeyword(e.target.value)}
+              className="flex-1 min-w-0 rounded-lg border border-input bg-background px-3 py-2 text-sm shadow-xs outline-none placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring"
+            />
+          </div>
+        </div>
+        {/* 平板 768px–1279px：状态按钮 + 搜索 */}
+        <div className="hidden md:flex flex-wrap items-center gap-2 md:gap-4">
           {toolbar}
         </div>
         {pageOrders.length === 0 ? (
